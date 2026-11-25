@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HR بلمسة خضراء</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--dk:#1E2B22;--dk2:#16201A;--cr:#F3EBD3;--cr2:#ECE1BF;--ink:#20261F;--soft:#4B5346;--leaf:#5C7F52;--deep:#3E5A38;--gold:#C89B3C}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cr);color:var(--ink);font-family:Tajawal,sans-serif;line-height:1.8}
+h1,h2,h3,p{margin:0}.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+section{padding:64px 0}
+.head{max-width:56ch;margin-bottom:34px}.head h2{font-size:clamp(25px,4vw,34px);font-weight:800;color:var(--deep)}.head p{margin-top:10px;color:var(--soft)}
+.hero{position:relative;background:radial-gradient(120% 90% at 15% 0,#24352A,var(--dk) 45%,var(--dk2));color:var(--cr);padding:84px 0 80px;overflow:hidden}
+.hero svg{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.hero .wrap{position:relative}.tag{color:var(--gold);font-weight:700;font-size:14px;margin-bottom:18px;display:block}
+.hero h1{font-family:Amiri,serif;font-size:clamp(40px,8vw,68px);line-height:1.25;max-width:11ch}.hero h1 b{color:var(--gold)}
+.hero p{margin-top:18px;font-size:18px;color:#CFD8C6;max-width:44ch}
+.btn{display:inline-block;margin-top:28px;background:var(--gold);color:#1a1a12;font-weight:800;padding:12px 28px;border-radius:999px;text-decoration:none}
+.nav{position:sticky;top:0;z-index:5;background:var(--dk2);display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.nav a{color:#CFD8C6;text-decoration:none;font-size:14px;white-space:nowrap;padding:6px 14px;border-radius:999px}.nav a:hover{background:#2a3d2f;color:#fff}
+.dims{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dim{background:var(--cr2);border-top:3px solid var(--leaf);padding:20px;border-radius:4px}.dim h3{font-size:18px;color:var(--deep);margin-bottom:6px}.dim p{font-size:14.5px;color:var(--soft)}
+.def{background:var(--dk);color:var(--cr);padding:22px 24px;border-radius:6px;margin-bottom:18px;font-size:16.5px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tab{border:1px solid var(--leaf);background:none;color:var(--deep);font:700 14px Tajawal;padding:9px 16px;border-radius:999px;cursor:pointer}.tab.on{background:var(--leaf);color:#fff}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vs div{padding:20px;border-radius:6px}.old{background:var(--cr2)}.new{background:var(--dk);color:var(--cr)}
+.vs small{display:block;font-weight:800;margin-bottom:6px}.old small{color:#8a5a34}.new small{color:var(--gold)}.vs p{font-size:15px}
+.time{border-right:2px solid var(--leaf);padding-right:22px}
+.step{position:relative;margin-bottom:22px}.step::before{content:"";position:absolute;right:-29px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.step b{color:var(--deep);font-size:17px}.step span{display:block;color:var(--gold);font-size:13px;font-weight:700}.step p{font-size:15px;color:var(--soft)}
+.sa{background:var(--dk);color:var(--cr)}.sa .head h2{color:#F7F2E2}.sa .head p{color:#C4CDBB}
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.num{border:1px solid rgba(247,242,226,.15);border-radius:6px;padding:22px;background:#243428}
+.num b{font:700 44px Amiri,serif;color:var(--gold);display:block;line-height:1.2}.num span{font-size:14.5px;color:#C4CDBB}
+.lab{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:start}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--cr2);border-radius:4px;margin-bottom:8px;cursor:pointer;font-size:15px}
+.chk input{accent-color:var(--leaf);width:19px;height:19px;margin-top:4px;flex:none}
+.tree{background:var(--dk);border-radius:8px;padding:20px;text-align:center;color:var(--cr);position:sticky;top:64px}
+.tree svg{width:100%;max-width:230px;margin:0 auto}.tree b{font:700 26px Amiri,serif;color:var(--gold);display:block}.tree p{font-size:14px;color:#C4CDBB}
+.g{background:#243428;border-radius:6px;padding:16px 18px;margin-bottom:12px;color:#EDE6D0}
+.g .row{display:flex;gap:10px;margin-top:12px}.g button{flex:1;border:0;border-radius:4px;padding:9px;font:700 14px Tajawal;cursor:pointer}
+.y{background:var(--leaf);color:#0F1A0F}.n{background:#5C4033;color:var(--cr)}.fb{min-height:20px;font-size:13.5px;color:var(--gold);margin-top:8px}
+.score{color:#C4CDBB;margin-bottom:16px}.score b{color:var(--gold)}
+details{background:var(--cr2);border-radius:4px;margin-bottom:10px;padding:14px 18px}summary{cursor:pointer;font-weight:800;color:var(--deep)}details p{margin-top:8px;font-size:15px;color:var(--soft)}
+.ex{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.ex div{border-right:3px solid var(--gold);background:var(--cr2);padding:14px 16px;border-radius:4px}.ex b{display:block;color:var(--deep)}.ex p{font-size:14px;color:var(--soft)}
+footer{background:var(--dk2);color:#CFD8C6;text-align:center;padding:36px 20px}footer b{display:block;font:700 22px Amiri,serif;color:var(--gold);margin-bottom:6px}footer p{font-size:13.5px}
+@media(max-width:720px){.dims,.vs,.lab,.ex,.nums{grid-template-columns:1fr}.tree{position:static}section{padding:50px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice"><path d="M780-20C620 60 560 180 600 320c30 100 120 140 200 180" stroke="#5C7F52" stroke-width="1.5" fill="none"/><path d="M700-20C560 90 520 210 560 340" stroke="#5C7F52" fill="none" opacity=".6"/><path d="M650 40c-50 60-60 120-30 180" stroke="#C89B3C" fill="none" opacity=".5"/></svg>
+<div class="wrap"><span class="tag">🌿 الدرس التاسع من مقرر موضوعات مختارة</span>
+<h1>HR بلمسة <b>خضراء</b></h1>
+<p>جولة تفاعلية تعرّفك على إدارة البيئة الخضراء في الموارد البشرية وتختبر مستوى قسمك وتزرع شجرتك الخاصة.</p>
+<a class="btn" href="#what">ابدأ الجولة</a></div>
+</header>
+<nav class="nav"><a href="#what">المفهوم</a><a href="#funcs">الوظائف الخمس</a><a href="#history">رحلة المفهوم</a><a href="#saudi">السعودية</a><a href="#lab">اختبر قسمك</a><a href="#game">أخضر أو لا</a><a href="#faq">التحديات</a><a href="#ex">أمثلة</a></nav>
+
+<section id="what"><div class="wrap">
+<div class="head"><h2>ما هي الموارد البشرية الخضراء؟</h2></div>
+<div class="def">دمج السياسات والممارسات والأنظمة التي تدفع الموظفين إلى سلوكيات صديقة للبيئة داخل المنظمة بما يعزز الاستخدام المستدام للموارد.</div>
+<div class="dims">
+<div class="dim"><h3>البعد البيئي</h3><p>تقليل استهلاك الموارد الطبيعية وخفض الانبعاثات وإدارة النفايات واستخدام الطاقة المتجددة</p></div>
+<div class="dim"><h3>البعد الاجتماعي</h3><p>صحة الموظفين ورضاهم وثقافة تنظيمية خضراء ومسؤولية تجاه المجتمع</p></div>
+<div class="dim"><h3>البعد الاقتصادي</h3><p>خفض التكاليف التشغيلية وتحسين الكفاءة وتعزيز الميزة التنافسية وزيادة الربحية</p></div>
+</div></div></section>
+
+<section id="funcs" style="background:#EFE5C6"><div class="wrap">
+<div class="head"><h2>خمس وظائف تتحول إلى أخضر</h2><p>اختر وظيفة وشاهد الفرق بين الممارسة التقليدية والخضراء</p></div>
+<div class="tabs" id="tabs"></div><div class="vs" id="vs"></div>
+</div></section>
+
+<section id="history"><div class="wrap">
+<div class="head"><h2>كيف تطور المفهوم؟</h2></div>
+<div class="time">
+<div class="step"><span>قبل 1970</span><b>مرحلة ما قبل الوعي</b><p>الشركات تركز على الإنتاجية والربحية دون اعتبار للأثر البيئي</p></div>
+<div class="step"><span>1970 إلى 1990</span><b>مرحلة الامتثال التنظيمي</b><p>الالتزام بالقوانين البيئية المتزايدة وتدريب الموظفين على السلامة</p></div>
+<div class="step"><span>1990 إلى 2008</span><b>مرحلة التكامل الاستراتيجي</b><p>دمج القضايا البيئية في الاستراتيجيات ونشأة المسؤولية الاجتماعية للشركات</p></div>
+<div class="step"><span>2008 إلى اليوم</span><b>مرحلة الاستدامة الشاملة</b><p>أصبحت البيئة الخضراء جزءاً أساسياً من استراتيجية الموارد البشرية</p></div>
+</div></div></section>
+
+<section id="saudi" class="sa"><div class="wrap">
+<div class="head"><h2>السعودية تزرع المستقبل</h2><p>مبادرات وطنية ترتبط مباشرة بدور الموارد البشرية في رؤية 2030</p></div>
+<div class="nums">
+<div class="num"><b data-n="10">0</b><span>مليار شجرة هدف مبادرة السعودية الخضراء</span></div>
+<div class="num"><b data-n="50" data-s="%">0</b><span>من الطاقة من مصادر متجددة بحلول 2030</span></div>
+<div class="num"><b data-n="30" data-s="%">0</b><span>من مساحة المملكة مناطق محمية</span></div>
+<div class="num"><b data-n="2060">0</b><span>عام الوصول إلى الحياد الصفري للانبعاثات</span></div>
+</div></div></section>
+
+<section id="lab"><div class="wrap">
+<div class="head"><h2>اختبر قسمك: كم أخضر هو؟</h2><p>حدد الخطوات التي يطبقها قسم الموارد البشرية لديك وشاهد شجرتك تنمو</p></div>
+<div class="lab"><div id="chks"></div>
+<div class="tree"><svg viewBox="0 0 200 220" id="tsvg"></svg><b id="lvl">بذرة</b><p id="lvlt">ابدأ بتحديد الخطوات</p></div></div>
+</div></section>
+
+<section id="game" class="sa"><div class="wrap">
+<div class="head"><h2>أخضر أو لا؟</h2><p>اضغط على التصنيف الصحيح لكل ممارسة</p></div>
+<div class="score">النتيجة <b id="sc">0</b> من 5 &nbsp; <u id="rs" style="cursor:pointer">إعادة</u></div><div id="gm"></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="head"><h2>تحديات التطبيق وحلولها</h2></div>
+<details><summary>مقاومة التغيير</summary><p>التحدي أن بعض الموظفين يتمسكون بعاداتهم. الحل دعم الإدارة العليا وإشراك الموظفين في جميع المراحل مع التواصل الفعال بالنتائج.</p></details>
+<details><summary>التكاليف الأولية</summary><p>التحدي أن التقنيات الخضراء تحتاج استثمارات في البداية. الحل البدء بمبادرات صغيرة سهلة التنفيذ ثم التوسع تدريجياً.</p></details>
+<details><summary>نقص الخبرة والمعرفة</summary><p>التحدي غياب الكفاءات المتخصصة. الحل الاستثمار في التدريب والتعاون مع خبراء ومنظمات متخصصة.</p></details>
+<details><summary>صعوبة القياس</summary><p>التحدي أن العائد البيئي طويل المدى. الحل وضع مؤشرات أداء رئيسية واضحة ومتابعتها بانتظام.</p></details>
+</div></section>
+
+<section id="ex" style="background:#EFE5C6"><div class="wrap">
+<div class="head"><h2>أمثلة ملهمة</h2></div>
+<div class="ex">
+<div><b>أرامكو السعودية</b><p>تدريب الموظفين على كفاءة الطاقة ومعايير بيئية صارمة</p></div>
+<div><b>سابك</b><p>دمج الاستدامة في كل وظائف الموارد البشرية</p></div>
+<div><b>البنك الأهلي</b><p>تحول رقمي قلل استخدام الورق بشكل كبير</p></div>
+<div><b>Google</b><p>سياسة صفر نفايات وحوافز للنقل المستدام</p></div>
+<div><b>Patagonia</b><p>إجازات مدفوعة للتطوع في مشاريع بيئية</p></div>
+<div><b>IKEA</b><p>ربط مكافآت المديرين بأهداف الاستدامة</p></div>
+</div></div></section>
+
+<footer><b>إعداد الطالبة ريماس عبدالله الحواس</b><p>بوث الدرس التاسع إدارة البيئة الخضراء في الموارد البشرية</p></footer>
+
+<script>
+history.scrollRestoration='manual';
+if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+const top0=()=>window.scrollTo(0,0);top0();addEventListener('load',()=>{top0();setTimeout(top0,150)});
+const F=[["التوظيف والاختيار","إعلان الوظائف وأوراق السيرة ومقابلات حضورية فقط","توظيف إلكتروني ومقابلات افتراضية وتفضيل المرشحين ذوي الوعي البيئي"],
+["التدريب والتطوير","كتيبات مطبوعة ودورات حضورية تستهلك الورق والتنقل","منصات تعلم رقمية وحملات توعية بيئية وتدريب على الاستدامة"],
+["إدارة الأداء","تقييم يقيس الإنتاجية فقط","مؤشرات بيئية ضمن التقييم ومكافأة المساهمين في خفض الاستهلاك"],
+["التعويضات والمزايا","مزايا لا تراعي السلوك البيئي","حوافز للنقل العام والعمل من المنزل ومكافآت لتقليل الاستهلاك"],
+["علاقات الموظفين","فعاليات بلا بعد بيئي","فرق عمل خضراء ومبادرات مشاركة وحوار حول القضايا البيئية"]];
+const tb=document.getElementById('tabs'),vs=document.getElementById('vs');
+function show(i){[...tb.children].forEach((t,j)=>t.classList.toggle('on',i==j));vs.innerHTML=`<div class="old"><small>الممارسة التقليدية</small><p>${F[i][1]}</p></div><div class="new"><small>الممارسة الخضراء</small><p>${F[i][2]}</p></div>`}
+F.forEach((f,i)=>{const b=document.createElement('button');b.className='tab';b.textContent=f[0];b.onclick=()=>show(i);tb.appendChild(b)});show(0);
+
+const S=["تقييم شامل للممارسات الحالية وتحديد الفرص","أهداف ذكية قابلة للقياس مرتبطة باستراتيجية المنظمة","التحول الرقمي وتقليل الورق والتوقيع الإلكتروني","مراجعة سياسات التوظيف بمعايير الوعي البيئي","برامج تدريب وتوعية بيئية للموظفين","ربط الأداء والمكافآت بالسلوك الأخضر","قياس المؤشرات والتحسين المستمر"];
+const ch=document.getElementById('chks'),sv=document.getElementById('tsvg');
+S.forEach(s=>{const l=document.createElement('label');l.className='chk';l.innerHTML=`<input type="checkbox"><span>${s}</span>`;l.onchange=up;ch.appendChild(l)});
+function up(){const n=ch.querySelectorAll('input:checked').length;
+let g='<rect x="96" y="'+(200-n*20)+'" width="8" height="'+(n*20+10)+'" rx="4" fill="#8a5a34"/>';
+if(!n)g='<ellipse cx="100" cy="205" rx="10" ry="6" fill="#8a5a34"/>';
+for(let i=0;i<n;i++){const y=190-i*22,w=18+i*7;g+=`<ellipse cx="${100-w}" cy="${y}" rx="${w*0.8}" ry="9" fill="${i%2?'#5C7F52':'#7a9f63'}" transform="rotate(-18 ${100-w} ${y})"/><ellipse cx="${100+w}" cy="${y-8}" rx="${w*0.8}" ry="9" fill="${i%2?'#7a9f63':'#5C7F52'}" transform="rotate(18 ${100+w} ${y-8})"/>`}
+if(n==7)g+='<circle cx="100" cy="30" r="14" fill="#C89B3C"/>';
+sv.innerHTML=g+'<line x1="20" y1="212" x2="180" y2="212" stroke="#5C7F52"/>';
+const L=n<3?["بذرة","قسمك في بداية الطريق وهناك فرص كبيرة للتحسين"]:n<6?["شتلة","قسمك يسير بشكل جيد ويحتاج مزيداً من الخطوات"]:["شجرة","قسمك أخضر بامتياز ويصلح قدوة للآخرين"];
+document.getElementById('lvl').textContent=L[0];document.getElementById('lvlt').textContent=L[1]}up();
+
+const P=[["طباعة العقود والنماذج ورقياً لكل موظف جديد",0],["اعتماد التوقيع الإلكتروني على المستندات",1],["برنامج عمل هجين يقلل التنقل اليومي",1],["أرشفة نسخ ورقية لكل تقييم أداء سنوي",0],["تدريب الموظفين الجدد عبر منصة رقمية",1]];
+const gm=document.getElementById('gm'),sc=document.getElementById('sc');let pts=0;
+function rg(){gm.innerHTML='';pts=0;sc.textContent=0;P.forEach(([t,a])=>{const d=document.createElement('div');d.className='g';d.innerHTML=`${t}<div class="row"><button class="y">أخضر</button><button class="n">غير مستدام</button></div><div class="fb"></div>`;const [y,n]=d.querySelectorAll('button'),f=d.querySelector('.fb');
+[[y,1],[n,0]].forEach(([b,v])=>b.onclick=()=>{y.disabled=n.disabled=true;if(v==a){pts++;sc.textContent=pts;f.textContent='إجابة صحيحة'}else f.textContent=a?'هذه ممارسة خضراء':'هذه ممارسة غير مستدامة'});gm.appendChild(d)})}
+document.getElementById('rs').onclick=rg;rg();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,n=+el.dataset.n,s=el.dataset.s||'';let k=0;const t=setInterval(()=>{k+=n/40;if(k>=n){k=n;clearInterval(t)}el.textContent=Math.round(k)+s},30)}),{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
